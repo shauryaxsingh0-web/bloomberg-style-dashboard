@@ -1,0 +1,92 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: dark;
+  --background: 222 18% 4%;
+  --foreground: 210 20% 94%;
+  --muted: 222 14% 12%;
+  --muted-foreground: 215 12% 65%;
+  --border: 220 13% 18%;
+  --input: 220 13% 16%;
+  --ring: 188 86% 53%;
+  --primary: 188 86% 53%;
+  --primary-foreground: 222 47% 7%;
+  --destructive: 0 84% 60%;
+  --destructive-foreground: 0 0% 98%;
+  --positive: 145 76% 49%;
+  --negative: 0 83% 61%;
+  --warning: 38 92% 52%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  min-height: 100%;
+  background: #050609;
+}
+
+body {
+  min-height: 100%;
+  margin: 0;
+  background:
+    radial-gradient(circle at 18% -12%, rgba(56, 189, 248, 0.12), transparent 30%),
+    radial-gradient(circle at 88% 4%, rgba(22, 163, 74, 0.07), transparent 24%),
+    linear-gradient(180deg, #050609 0%, #080a0f 50%, #050609 100%);
+  color: hsl(var(--foreground));
+  font-feature-settings: "tnum";
+  text-rendering: geometricPrecision;
+}
+
+::selection {
+  background: rgba(103, 232, 249, 0.26);
+  color: #f8fafc;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: rgba(15, 17, 21, 0.75);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #303846;
+  border: 2px solid rgba(15, 17, 21, 0.75);
+  border-radius: 999px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #465060;
+}
+
+@layer base {
+  button,
+  input,
+  select {
+    font: inherit;
+  }
+}
+
+@layer components {
+  .terminal-panel {
+    @apply border border-border/90 shadow-panel backdrop-blur-xl;
+    background-color: rgba(15, 17, 21, 0.92);
+  }
+
+  .terminal-grid {
+    background-image:
+      linear-gradient(rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+      linear-gradient(90deg, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+    background-size: 32px 32px;
+  }
+
+  .number-tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}
